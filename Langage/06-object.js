@@ -62,6 +62,22 @@ console.log(
   coords1.infos === coords2.infos,
 ); // false
 
+// on a 2 syntaxe pour accéder au contenu de l'objet
+// soit .
+console.log(coords1.x);
+// soit []
+console['log'](coords1['x']);
+
+
+// on peut boucler sur les clés
+for (var key of coords1) {
+  console.log(key);
+  const val = coords1[key];
+  console.log(value);
+}
+
+
+
 // création d'un objet multi-instancié
 // compliqué à créer
 // et/ou AVEC méthodes
