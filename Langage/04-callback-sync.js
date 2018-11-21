@@ -2,8 +2,10 @@ const nbs = [2, 3, 4];
 
 console.log(Array.isArray(nbs)) // true
 
+const estPair = (nb) => nb % 2 === 0;
+
 nbs
-  .filter((nb) => nb % 2 === 0)
+  .filter(estPair)
   .map((nb) => nb ** 2)
   .forEach((nb, i) => {
     console.log(nb);

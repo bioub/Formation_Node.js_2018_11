@@ -36,7 +36,7 @@ console.log('typeof Math.sum', typeof Math.sum); // undefined
 
 // création d'un objet mono-instancié (jamais 2 pareils)
 // => object literal
-const MyMath = {
+const myMath = {
   sum: (a, b) => a + b
 };
 
@@ -75,6 +75,10 @@ Contact.prototype.hello = function() {
   return 'Bonjour je suis ' + this.prenom;
 };
 
+console.log(typeof Contact); // function
+
 const romain = new Contact('Romain');
 console.log(romain.prenom);
 console.log(romain.hello());
+console.log(romain.hasOwnProperty('prenom')); // true
+console.log(romain.hasOwnProperty('hello')); // false

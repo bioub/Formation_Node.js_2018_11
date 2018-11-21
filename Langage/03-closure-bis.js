@@ -57,7 +57,7 @@ for (var i=0; i<3; i++) {
 
 // pile d'appel
 // ^
-// |                                             m=0 m=1 m=2
-// |                                             log log log
-// |for { setTimeout setTimeout setTimeout } ... st1 st2 st3
+// |                                             msg=0 msg=1 msg=2
+// |                                             log   log   log
+// |for { setTimeout setTimeout setTimeout } ... int   int   int
 // +---------------------------------------------0.03s--------> temps

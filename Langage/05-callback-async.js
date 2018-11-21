@@ -30,7 +30,7 @@ console.log('Fin');
 // ^
 // |
 // |                             log      log log      log
-// |st - st - st - st - log .... cbC .... cbA cbD .... cbB-*9+6
+// |st - st - st - st - log .... cbC .... cbA cbD .... cbB
 
 // +-----------------------------2--------501-502------1001-------------> temps
 // sortie :             Fin      C        A   D        B
