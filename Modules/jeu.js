@@ -1,28 +1,6 @@
-'use strict';
-
-const random = {
-  get() {
-    return Math.random();
-  },
-
-  getArbitrary(min, max) {
-    return Math.random() * (max - min) + min;
-  },
-
-  getInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min;
-  },
-
-  getIntInclusive(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min +1)) + min;
-  },
-};
-
-const readline = require('readline');
+const random = require('./random'); // un fichier JS du projet (prefix ./ ou ../)
+const readline = require('readline'); // un fichier JS du binaire de Node.js
+const chalk = require('chalk'); // un dossier JS installé avec npm
 
 /**
  * Nouvelle partie du Jeu
@@ -49,7 +27,7 @@ class Jeu {
       console.log(`Vous avez déjà joué ${this._essais.join(' - ')}...`);
     }
 
-    this._rl.question('Quel est le nombre ? ', (answer) => {
+    this._rl.question(chalk.blue('Quel est le nombre ? '), (answer) => {
       const entierSaisi = Number.parseInt(answer);
 
       if (Number.isNaN(entierSaisi)) {
@@ -75,8 +53,4 @@ class Jeu {
   }
 }
 
-
-
-const game = new Jeu();
-game.jouer();
-
+module.exports = Jeu;
