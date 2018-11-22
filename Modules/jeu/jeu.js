@@ -1,3 +1,5 @@
+'use strict';
+
 const random = require('./random'); // un fichier JS du projet (prefix ./ ou ../)
 const readline = require('readline'); // un fichier JS du binaire de Node.js
 const chalk = require('chalk'); // un dossier JS installé avec npm
