@@ -23,6 +23,9 @@ async function buildJs(dir) {
     fs.readFile(indexJsPath),
   ]);
 
+  // const buffer = Buffer.concat(datas);
+  // await fs.appendFile(appJsDistPath, buffer);
+
   for (const data of datas) {
     await fs.appendFile(appJsDistPath, data);
   }
