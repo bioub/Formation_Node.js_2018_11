@@ -2,6 +2,11 @@ const express = require('express');
 
 const app = express();
 
+app.use((req, res, next) => {
+  console.log(req.url + ' ' + req.method);
+  next();
+});
+
 // toutes les méthodes HTTP sur /
 app.all('/', (req, res) => {
   res.statusCode = 200;

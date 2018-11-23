@@ -72,7 +72,7 @@ console['log'](coords1['x']);
 // on peut boucler sur les clés
 for (var key of coords1) {
   console.log(key);
-  const val = coords1[key];
+  const value = coords1[key];
   console.log(value);
 }
 

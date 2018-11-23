@@ -1,17 +1,17 @@
 setTimeout(() => {
-  console.log('A')
+  console.log('A');
 }, 500);
 
 setTimeout(() => {
-  console.log('B')
+  console.log('B');
 }, 1000);
 
 setTimeout(() => {
-  console.log('C')
+  console.log('C');
 }, 0);
 
 setTimeout(() => {
-  console.log('D')
+  console.log('D');
 }, 500);
 
 /*

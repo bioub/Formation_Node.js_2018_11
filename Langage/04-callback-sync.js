@@ -1,6 +1,6 @@
 const nbs = [2, 3, 4];
 
-console.log(Array.isArray(nbs)) // true
+console.log(Array.isArray(nbs)); // true
 
 const estPair = (nb) => nb % 2 === 0;
 

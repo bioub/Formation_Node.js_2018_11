@@ -35,11 +35,17 @@ async function buildJs(dir) {
 
 async function buildHtml(dir) {
   let data = await fs.readFile(indexHtmlPath);
-  let content = data.toString();
+  let content = data.toString('utf-8');
 
+  /*
   content = content.replace('<script src="./js/horloge.js"></script>', '');
   content = content.replace(
     '<script src="./js/index.js"></script>',
+    '<script src="./app.js"></script>',
+  );
+  */
+  content = content.replace(
+    /<script.*><\/script>/s,
     '<script src="./app.js"></script>',
   );
 
