@@ -1,19 +1,6 @@
 const express = require('express');
 const isAuthenticated = require('../middlewares/is-authenticated');
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
-
-const Contact = mongoose.model('Contact', { name: String });
-
-const contacts = [{
-  id: 123,
-  name: 'John',
-}, {
-  id: 456,
-  name: 'Jean',
-}];
-
-let prevId = 456;
+const Contact = require('../models/contact');
 
 const router = express.Router();
 
@@ -34,14 +21,13 @@ router.post('/', express.json(), async (req, res, next) => {
   res.json(contact);
 });
 
-// 2 - Sur la requete GET /api/contacts/123
-// retourner en JSON le contact dont l'id est 123
+// 2 - Sur la requete GET /api/contacts/5bf7f05e13a37213b8940eef
+// retourner en JSON le contact dont l'id est 5bf7f05e13a37213b8940eef
 // 3 - Rendre 123 paramétrable
-router.get('/:id', (req, res, next) => {
+router.get('/:id', async (req, res, next) => {
 
   // Utiliser la méthode findById de Contact
-
-  const contact = contacts.find((c) => c.id === Number(req.params.id));
+  const contact = await Contact.findById(req.params.id);
 
   if (!contact) {
     res.statusCode = 404;

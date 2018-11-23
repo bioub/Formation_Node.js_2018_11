@@ -3,6 +3,9 @@ const https = require('https');
 
 const app = require('./app');
 
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/test');
+
 const httpServer = http.createServer(app);
 
 httpServer.on('error', (err) => {
